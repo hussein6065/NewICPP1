@@ -1,6 +1,7 @@
 package guiGalam;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 import galamsey.IMS.Monitoring;
 import javafx.application.Application;
@@ -17,12 +18,22 @@ public class Main extends Application {
 	private Stage primaryStage;
 	private static BorderPane mainLayout;
 	public  static Monitoring mainSys;
+	public static String Username;
+	public static String password;
+	Scanner input;
 	
 	@FXML
 	private Label Final;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
+		
+		input = new Scanner(System.in);
+		System.out.println("Please Enter your Username to your Sql server: ");
+		Username = input.next();
+		System.out.println("Please Enter your password to your Sql server: ");
+		password = input.next();
+		
 		mainSys = new Monitoring();
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Galamsey Monitoring");

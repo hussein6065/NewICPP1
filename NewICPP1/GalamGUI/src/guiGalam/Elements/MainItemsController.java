@@ -23,8 +23,8 @@ public class MainItemsController {
 	final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
 	final String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false";
 	
-	final String USER = "root";
-	final String PASS = "FubahU^1458";
+	final String USER = main.Username;
+	final String PASS = main.password;
 	 
 	//Creating instance of the Scanner class to accept input
 	
