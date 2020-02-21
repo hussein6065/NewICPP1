@@ -10,5 +10,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFx"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jfoenix"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/MySql"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Javafx"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
