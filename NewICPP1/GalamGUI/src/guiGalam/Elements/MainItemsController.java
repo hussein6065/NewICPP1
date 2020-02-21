@@ -24,7 +24,7 @@ public class MainItemsController {
 	final String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false";
 	
 	final String USER = "root";
-	final String PASS = "";
+	final String PASS = "FubahU^1458";
 	 
 	//Creating instance of the Scanner class to accept input
 	
@@ -146,20 +146,43 @@ public class MainItemsController {
 	
 	
 	public void largestColorValue(ActionEvent event) {
-		t1.setText("");
+		t1.setText(Double.toString(mainSys.largestGalamseyValueEverRecord()));
 	}
 	
 	public void AvgEverRecorded(ActionEvent event) {
-		t1.setText("");
+		t1.setText(Double.toString(mainSys.getLargestAverageGalamseyValue()));
 	}
 	
 	public void threshold(ActionEvent event) {
 		in1.getText();
 		if(in1.getText().isEmpty())
 			t1.setText("");
-		else
-			t1.setText(in1.getText());
+		else {
+			try {
+
+				t1.setText(mainSys.getAllGalamseyActAboveValueof(Integer.parseInt(in1.getText())));
+			}catch(Exception e) {
+				t2.setText("Wrong Input");
+				t1.setText("Enter An Integer!");
+			}
+		}
+			
 	}
+
+	
+	public void showRecords(ActionEvent event) {
+		if(mainSys.getAllObservatory().isEmpty())
+			t1.setText("No Records");
+		t1.setText(mainSys.getAllObservatory());
+		
+		if(mainSys.getAllGalam().isEmpty())
+			t2.setText("No Records");
+		t2.setText(mainSys.getAllGalam());
+	}
+	
+	
+	
+	
 	@FXML
 	private void goGalamsey()throws IOException{
 		main.showGalamseyScene();

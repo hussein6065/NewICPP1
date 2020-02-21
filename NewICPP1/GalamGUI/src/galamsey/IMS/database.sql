@@ -10,7 +10,7 @@ year_started varchar(50),
 area_covered double
 );
 
-create table Monitoring(
+create table Galamsey(
 id int primary key auto_increment,
 veg_color varchar(50) not null,
 position varchar(20),

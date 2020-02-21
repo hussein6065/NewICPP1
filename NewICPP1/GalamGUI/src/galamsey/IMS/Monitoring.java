@@ -23,9 +23,7 @@ public class Monitoring {
      * @return 0
      * 
      * */
-	public int largestGalamColVal() {
-		return 0;
-	}
+	
 	
 	/**
 	 * @param observatory
@@ -68,13 +66,32 @@ public class Monitoring {
 	public String getAllGalamseyActAboveValueof(int value) {
 		String info = "";
 		for(Observatory E:getObservatories())
-			if(E.averageGalamseyCValue()>value) {
-				String y =E+"\n";
-				info+=y;
+			for(Galamsey A:E.getGalamseyEvents())
+				if(A.getColour_val()>value) {
+					String y =A+"\n";
+					info+=y;
 			}
 		return info;
 	}
-		
+	
+	public String getAllObservatory() {
+		String info = "";
+		for(Observatory E:getObservatories()) {
+			String y =E+"\n\n";
+			info+=y;
+		}
+		return info;
+			
+	}
+	public String getAllGalam() {
+		String info = "";
+		for(Observatory E:getObservatories())
+			for(Galamsey A:E.getGalamseyEvents()){
+					String y =A+"\n\n";
+					info+=y;
+			}
+		return info;
+	}
 		
 }
 
