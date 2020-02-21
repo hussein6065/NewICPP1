@@ -2,6 +2,7 @@ package guiGalam;
 
 import java.io.IOException;
 
+import galamsey.IMS.Monitoring;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,13 +16,14 @@ public class Main extends Application {
 	
 	private Stage primaryStage;
 	private static BorderPane mainLayout;
-//	private  Monitoring ;
+	public  static Monitoring mainSys;
 	
 	@FXML
 	private Label Final;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
+		mainSys = new Monitoring();
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Galamsey Monitoring");
 		showView();
@@ -60,7 +62,7 @@ public class Main extends Application {
 	}
 	public static void showStatisticsScene() throws IOException{
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("Elements/Monitoring statistics.fxml"));
+		loader.setLocation(Main.class.getResource("Elements/MonitoringStastistics.fxml"));
 		BorderPane Galamsey = loader.load();
 		mainLayout.setCenter(Galamsey);
 	}
